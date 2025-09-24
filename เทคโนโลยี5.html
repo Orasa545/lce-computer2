@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice computer</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color:#000066;
+    }
+    header {
+      background: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0066FF;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+    }
+    nav a:hover {
+      background: #000033;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      background: #fafafa;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .promo {
+      background: #FF99FF;
+      border: 2px dashed #e91e63;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .promo h3 {
+      color: #e91e63;
+    }
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    .cart-summary {
+      background: #f5f5f5;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .cart-summary table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .cart-summary table, .cart-summary th, .cart-summary td {
+      border: 1px solid #ddd;
+    }
+    .cart-summary th, .cart-summary td {
+      padding: 10px;
+      text-align: center;
+    }
+    .checkout-button {
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .checkout-button:hover {
+      background-color: #c2185b;
+    }
+    .remove-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-button:hover {
+      background-color: darkred;
+    }
+    .contact-form {
+      background: #f5f5f5;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      width: 50%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .contact-form button {
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ice computer</h1>
+    <p>คอมพิวเตอร์ยอดฮิตตัวดัง</p>
+  </header>
+
+  <!-- เมนูนำทาง -->
+  <nav>
+    <a href="#all">สินค้าทั้งหมด</a>
+    <a href="#bestseller">สินค้าขายดี</a>
+    <a href="#promo">โปรโมชั่น</a>
+    <a href="#cart">ตะกร้าสินค้า</a>
+    <a href="#payment">ชำระเงิน</a>
+    <a href="#contact">ติดต่อเรา</a>
+  </nav>
+
+  <!-- สินค้าทั้งหมด -->
+  <section id="all">
+    <h2>🛍️ สินค้าทั้งหมด</h2>
+    <div class="products">
+      <div class="product">
+        <img src="img/acer14.jpg" alt="คอม acer14">
+        <h3>acer14</h3>
+        <p>ราคา: 20,000 บาท</p>
+        <button onclick="addToCart('acer14', 20000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/asus13.jpg" alt="คอม asus13">
+        <h3>asus13</h3>
+        <p>ราคา: 28,000 บาท</p>
+        <button onclick="addToCart('asus13', 28000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/asus18.jfif" alt="คอม asus18">
+        <h3>asus18</h3>
+        <p>ราคา: 25,000 บาท</p>
+        <button onclick="addToCart('asus18', 25000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/dell12.jpg" alt="คอม dell12">
+        <h3>dell12</h3>
+        <p>ราคา: 30,000 บาท</p>
+        <button onclick="addToCart('dell12', 30000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/Dell-XPS-13.webp" alt="คอม Dell ">
+        <h3>Dell-XPS-13</h3>
+        <p>ราคา: 40,000 บาท</p>
+        <button onclick="addToCart('Dell-XPS-13', 20000)">เพิ่มในตะกร้า</button>
+      </div>
+    </div>
+  </section>
+
+<!-- สินค้าขายดี -->
+  <section id="bestseller">
+    <h2>🔥 สินค้าขายดี</h2>
+    <div class="products">
+      <div class="product">
+        <img src="img/images (3).jfif" alt="เมาส์ acer">
+        <h3>เมาส์ acer</h3>
+        <p>ราคา: 3,000 บาท</p>
+ 	  <button onclick="addToCart('เมาส์ acer', 3000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/images (2).jfif" alt="เมาส์ asus">
+        <h3>เมาส์ asus</h3>
+        <p>ราคา: 2,000 บาท</p>
+ 	  <button onclick="addToCart('เมาส์ asus', 2000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/images (5).jfif" alt="เมาส์  Dell">
+        <h3>เมาส์ Dell</h3>
+        <p>ราคา: 1,000 บาท</p>
+ 	  <button onclick="addToCart('เมาส์ Dell', 1000)">เพิ่มในตะกร้า</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- โปรโมชั่น -->
+  <section id="promo">
+    <h2>🎉 โปรโมชั่นพิเศษ</h2>
+    <div class="promo">
+      <h3>ลดสูงสุด 30% เฉพาะเดือนนี้!</h3>
+      <p>ซื้อสินค้าครบ 30,000 บาท รับส่วนลดทันที 5,000 บาท</p>
+      <p>ส่งฟรีทั่วประเทศ ไม่มีขั้นต่ำ 🛒</p>
+ 	<button onclick="addToCart('เมาส์ asus', 5000)">เพิ่มในตะกร้า</button>
+    </div>
+
+    <div class="products">
+      <div class="product">
+        <img src="img/jh7.jpg" alt="แป้นพิมพ์">
+        <h3>แป้นพิมพ์</h3>
+        <p><del>5000 บาท</del> <br> ✅ 5000 บาท</p>
+ 	  <button onclick="addToCart('แป้นพิมพ์',5000)">เพิ่มในตะกร้า</button>
+      </div>
+      <div class="product">
+        <img src="img/olytsx.jpg" alt="แป้นพิมพ์">
+        <h3>แป้นพิมพ์</h3>
+        <p><del>55,000 บาท</del> <br> ✅ 39,000 บาท</p>
+ 	  <button onclick="addToCart('Chanel Jacket', 39000)">เพิ่มในตะกร้า</button>
+      </div>
+    </div>
+  </section>
+  </section>
+
+ <!-- ตะกร้าสินค้า -->
+  <section id="cart" class="cart-summary">
+    <h2>🛒 ตะกร้าสินค้า</h2>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>สินค้า</th>
+          <th>ราคา</th>
+          <th>ลบ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- รายการสินค้าจะถูกเพิ่มที่นี่ -->
+      </tbody>
+    </table>
+    <p id="total-price">รวมทั้งหมด: 0 บาท</p>
+    <button class="checkout-button" onclick="checkout()">ดำเนินการชำระเงิน</button>
+
+
+  <!-- ฟอร์มติดต่อ -->
+  <section id="contact" class="contact-form">
+    <h2>📬 ติดต่อเรา</h2>
+    <p>กรุณากรอกข้อมูลเพื่อให้เราสามารถติดต่อกลับได้</p>
+    <form id="contact-form">
+      <label for="name">ชื่อ-นามสกุล:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">อีเมล:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">ข้อความ/คำถาม:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">ส่งข้อความ</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chanel Clothing Store | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(product, price) {
+      cart.push({ product, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartTable = document.getElementById("cart-table").getElementsByTagName('tbody')[0];
+      cartTable.innerHTML = ""; // Clear existing rows
+      let totalPrice = 0;
+
+      cart.forEach((item, index) => {
+        let row = cartTable.insertRow();
+        row.innerHTML = `<td>${item.product}</td><td>${item.price} บาท</td><td><button class="remove-button" onclick="removeFromCart(${index})">ลบ</button></td>`;
+        totalPrice += item.price;
+      });
+
+      document.getElementById("total-price").innerText = `รวมทั้งหมด: ${totalPrice} บาท`;
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("กรุณาเพิ่มสินค้าในตะกร้าก่อนชำระเงิน!");
+        return;
+      }
+      alert("ขอบคุณสำหรับการสั่งซื้อ! ระบบจะทำการชำระเงินต่อไป");
+    }
+
+    // ฟังก์ชันการส่งข้อความติดต่อ
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("ขอบคุณสำหรับข้อความของคุณ! เราจะติดต่อกลับไปเร็วๆ นี้.");
+      document.getElementById("contact-form").reset();
+    });
+  </script>
+
+</body>
+</html>
